@@ -45,6 +45,7 @@ export const business = {
   nav: [
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/case-studies" },
+    { label: "Guides", href: "/guides" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],

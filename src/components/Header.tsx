@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { business } from "@/config/business";
+import { Logo } from "./Logo";
 
 export function Header() {
   const pathname = usePathname();
@@ -35,12 +36,8 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-lg transition-shadow ${scrolled || open ? "border-line shadow-sm" : "border-transparent"}`}>
       <nav aria-label="Primary" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
-        <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-extrabold tracking-tight" onClick={() => setOpen(false)}>
-          <span aria-hidden="true" className="grid size-9 place-items-center rounded-lg bg-navy text-sm font-extrabold text-white">AYR</span>
-          <span>
-            {business.name.replace(" Services", "")}
-            <span className="text-brand"> Services</span>
-          </span>
+        <Link href="/" aria-label={`${business.name} home`} onClick={() => setOpen(false)}>
+          <Logo />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

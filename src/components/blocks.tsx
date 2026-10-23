@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { business } from "@/config/business";
 import type { Service } from "@/config/services";
 import type { CaseStudy } from "@/config/case-studies";
+import type { Guide } from "@/config/guides";
 import { Icon, Reveal } from "./ui";
 
 export function SectionHeading({ eyebrow, title, intro, center }: { eyebrow?: string; title: string; intro?: string; center?: boolean }) {
@@ -105,6 +106,19 @@ export function CaseStudyCard({ c }: { c: CaseStudy }) {
           Read case study <ArrowUpRight className="size-4" aria-hidden="true" />
         </span>
       </div>
+    </Link>
+  );
+}
+
+export function GuideCard({ g }: { g: Guide }) {
+  return (
+    <Link href={`/guides/${g.slug}`} className="group flex h-full flex-col rounded-2xl border border-line bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg">
+      <p className="text-xs font-semibold uppercase tracking-wider text-brand">{g.category} · {g.readMinutes} min read</p>
+      <h3 className="mt-3 font-display text-lg font-bold leading-snug">{g.title}</h3>
+      <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">{g.description}</p>
+      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+        Read the guide <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+      </span>
     </Link>
   );
 }

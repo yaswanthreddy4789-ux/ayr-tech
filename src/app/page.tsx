@@ -3,7 +3,8 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { business } from "@/config/business";
 import { services } from "@/config/services";
 import { caseStudies } from "@/config/case-studies";
-import { CaseStudyCard, CtaBand, Faq, ProcessSteps, SectionHeading, ServiceCard } from "@/components/blocks";
+import { guides } from "@/config/guides";
+import { CaseStudyCard, CtaBand, Faq, GuideCard, ProcessSteps, SectionHeading, ServiceCard } from "@/components/blocks";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui";
 
 const featured = ["wordpress-development", "shopify-development", "wix-development"];
@@ -145,6 +146,21 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
         <SectionHeading eyebrow="How it works" title="From first message to launch and beyond" />
         <ProcessSteps />
+      </section>
+
+      {/* guides */}
+      <section className="mx-auto max-w-6xl px-5 pb-16 md:px-8">
+        <SectionHeading eyebrow="Guides" title="Answers to questions clients ask me" intro="Choosing a platform, understanding costs, protecting SEO and staying accessible and secure." />
+        <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {guides.slice(0, 3).map((g) => (
+            <StaggerItem key={g.slug}><GuideCard g={g} /></StaggerItem>
+          ))}
+        </Stagger>
+        <Reveal className="mt-8">
+          <Link href="/guides" className="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3 text-sm font-semibold transition-colors hover:border-brand hover:text-brand">
+            All guides <ArrowUpRight className="size-4" aria-hidden="true" />
+          </Link>
+        </Reveal>
       </section>
 
       {/* 10. FAQ */}

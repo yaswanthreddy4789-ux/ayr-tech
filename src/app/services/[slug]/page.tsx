@@ -5,7 +5,8 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { business } from "@/config/business";
 import { getService, services } from "@/config/services";
 import { getCaseStudy } from "@/config/case-studies";
-import { Breadcrumbs, CaseStudyCard, CtaBand, Faq, JsonLd, ProcessSteps, SectionHeading } from "@/components/blocks";
+import { guidesForService } from "@/config/guides";
+import { Breadcrumbs, CaseStudyCard, CtaBand, Faq, GuideCard, JsonLd, ProcessSteps, SectionHeading } from "@/components/blocks";
 import { Icon, Reveal, Stagger, StaggerItem } from "@/components/ui";
 
 export const dynamicParams = false;
@@ -34,6 +35,7 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const cases = s.caseStudies.map(getCaseStudy).filter((c) => !!c);
+  const helpful = guidesForService(s.id);
   const related = s.related.map(getService).filter((x) => !!x);
 
   const serviceLd = {
@@ -114,6 +116,17 @@ export default async function ServicePage({ params }: Props) {
         <SectionHeading eyebrow="FAQ" title={`${s.title}: common questions`} center />
         <Faq items={s.faqs} />
       </section>
+
+      {helpful.length > 0 && (
+        <section className="mx-auto max-w-6xl px-5 pb-16 md:px-8">
+          <h2 className="font-display text-2xl font-bold">Helpful guides</h2>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {helpful.map((g) => (
+              <GuideCard key={g.slug} g={g} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="mx-auto max-w-6xl px-5 pb-16 md:px-8">

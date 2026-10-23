@@ -2,6 +2,7 @@ import Link from "next/link";
 import { business, emailHref } from "@/config/business";
 import { services } from "@/config/services";
 import { Year } from "./Year";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1.2fr_1fr]">
           <div>
-            <p className="font-display text-2xl font-extrabold">{business.name}</p>
+            <Logo onDark />
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">{business.tagline}</p>
             <ul className="mt-6 grid gap-2 text-sm">
               <li><a href={emailHref} className="text-white/90 hover:text-white hover:underline">{business.email}</a></li>
@@ -35,6 +36,7 @@ export function Footer() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/50">Company</p>
             <ul className="grid gap-2 text-sm">
               <li><Link href="/case-studies" className="text-white/80 hover:text-white hover:underline">Case studies</Link></li>
+              <li><Link href="/guides" className="text-white/80 hover:text-white hover:underline">Guides</Link></li>
               <li><Link href="/about" className="text-white/80 hover:text-white hover:underline">About</Link></li>
               <li><Link href="/contact" className="text-white/80 hover:text-white hover:underline">Contact</Link></li>
               <li><Link href="/quote" className="text-white/80 hover:text-white hover:underline">Request a quote</Link></li>

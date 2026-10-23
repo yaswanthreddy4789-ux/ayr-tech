@@ -21,6 +21,7 @@ npm start
 | `business.ts` | Business name, owner, email/phone/WhatsApp, location and time zone, markets served, stats, budgets, navigation |
 | `services.ts` | The 11 service pages (headline, who it's for, problems, deliverables, FAQs, related case studies) |
 | `case-studies.ts` | Case studies and screenshots (`public/case-studies/`) |
+| `guides.ts` | The SEO guides (`/guides/<slug>`): add an object to publish a new one. Sitemap, Article schema and internal links update automatically |
 
 Things marked `ASSUMPTION` in the config need your confirmation: the business name spelling, budget ranges, and which case studies you may show publicly.
 
@@ -46,7 +47,9 @@ The form fires a browser event `quote:submitted` on success. Listen for it to co
 
 ## SEO
 
-Per-page titles and descriptions, canonical URLs, sitemap, robots, Open Graph image, and JSON-LD (Organization, Service, BreadcrumbList, FAQPage). One global English site; no hreflang until genuine regional variants exist.
+Topics for the guides were chosen by search intent (platform comparisons, cost, redesign, accessibility, schema, security, large catalogs, hiring remotely). No keyword-volume data was available when they were written; check Search Console after a few weeks and expand whatever starts getting impressions.
+
+Per-page titles and descriptions, canonical URLs, sitemap, robots, Open Graph image, and JSON-LD (Organization, Service, BreadcrumbList, FAQPage, Article). One global English site; no hreflang until genuine regional variants exist.
 
 After deploying: add the site to Google Search Console and submit `/sitemap.xml`.
 
