@@ -42,6 +42,11 @@ export function Footer() {
               <li><Link href="/quote" className="text-white/80 hover:text-white hover:underline">Request a quote</Link></li>
               <li><Link href="/privacy" className="text-white/80 hover:text-white hover:underline">Privacy policy</Link></li>
               <li>
+                <a href={business.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white hover:underline">
+                  LinkedIn<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
                 <a href={business.portfolioUrl} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white hover:underline">
                   Personal portfolio<span className="sr-only"> (opens in a new tab)</span>
                 </a>

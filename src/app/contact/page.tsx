@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Globe, Mail, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, Globe, Mail, MessageCircle, Phone } from "lucide-react";
 import { business, emailHref } from "@/config/business";
 import { Breadcrumbs } from "@/components/blocks";
 import { Reveal } from "@/components/ui";
@@ -22,7 +22,7 @@ export default function ContactPage() {
         The quickest way to a useful answer is the quote form. You can also reach me directly using any of the options below.
       </p>
 
-      <Reveal className="mt-10 grid gap-5 md:grid-cols-3">
+      <Reveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <a href={emailHref} className={card}>
           <Mail className="size-6 text-brand" aria-hidden="true" />
           <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted">Email</p>
@@ -37,6 +37,11 @@ export default function ContactPage() {
           <MessageCircle className="size-6 text-brand" aria-hidden="true" />
           <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted">WhatsApp</p>
           <p className="mt-1 font-semibold group-hover:text-brand">Message me<span className="sr-only"> (opens in a new tab)</span></p>
+        </a>
+        <a href={business.linkedin} target="_blank" rel="noopener noreferrer" className={card}>
+          <BriefcaseBusiness className="size-6 text-brand" aria-hidden="true" />
+          <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted">LinkedIn</p>
+          <p className="mt-1 font-semibold group-hover:text-brand">Connect with me<span className="sr-only"> (opens in a new tab)</span></p>
         </a>
       </Reveal>
 

@@ -42,7 +42,7 @@ const organization = {
   description: business.description,
   founder: { "@type": "Person", name: business.owner },
   areaServed: business.areaServed.map((name) => ({ "@type": "Country", name })),
-  sameAs: [business.portfolioUrl],
+  sameAs: [business.portfolioUrl, business.linkedin],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
