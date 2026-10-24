@@ -33,6 +33,9 @@ export const business = {
   whatsapp: "https://wa.me/918919674214",
   linkedin: "https://www.linkedin.com/in/yaswanth-amasa-6894ab434",
 
+  /** Google Search Console verification token (meta tag). Paste only the token, without any prefix. */
+  googleVerification: "-W_mn0pn3QjXJJK6o2dqIKqUqBoUtOJiXRE6nu8n3vU",
+
   /** Budget choices in the quote form. ASSUMPTION: edit freely; empty array hides the field. */
   budgets: ["Under $1,000", "$1,000 – $3,000", "$3,000 – $7,500", "$7,500+", "Not sure yet"],
 
